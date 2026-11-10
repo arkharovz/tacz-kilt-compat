@@ -1,0 +1,40 @@
+plugins {
+    id 'fabric-loom' version '1.7.4'
+}
+
+version = project.mod_version
+group = 'dev.compat'
+base { archivesName = 'tacz-kilt-compat' }
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    // Mojang names: they match the names used in TACZ's mixins (renderLevel, popPush, ...),
+    // Loom generates the refmap to intermediary for us.
+    mappings loom.officialMojangMappings()
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = 17
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+// The class in com/tacz/** is a compile-time stub only. The real one comes from TACZ at runtime.
+jar {
+    exclude 'com/tacz/**'
+}
+
+processResources {
+    inputs.property "version", project.version
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version
+    }
+}
