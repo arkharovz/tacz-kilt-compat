@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "taczkilt",
+  "version": "1.0.0",
+  "name": "TACZ x Kilt Compat",
+  "description": "Makes TACZ playable on Fabric 1.20.1 under Kilt",
+  "authors": [
+		"Arkharov",
+		"Claude AI"
+	],
+  "license": "GPL-3.0-only",
+  "icon": "assets/taczkilt/icon.png",
+  "environment": "client",
+  "mixins": [
+    { "config": "tacz_kilt_compat.mixins.json", "environment": "client" }
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "1.20.1",
+    "java": ">=17"
+  }
+}

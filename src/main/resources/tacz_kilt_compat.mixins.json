@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.compat.taczkilt.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "plugin": "dev.compat.taczkilt.CompatMixinPlugin",
+  "client": [
+    "GameRendererScopeMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
