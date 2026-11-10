@@ -14,6 +14,6 @@ Fixes startup crash of `tacz-forge-1.20.1-1.2.0.jar` under Kilt:
    resolved through this mod's own refmap.
 
 ##
-Written by Claude AI from bytecode analysis of TACZ 1.2.0 vs 1.1.8-hotfix2.
+Made with help of AI
 
 License: GPL-3.0.
